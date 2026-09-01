@@ -14,8 +14,14 @@ pipeline {
             steps {
                 sh '''
                     cd app
-                    python3 -m pip install -r requirements.txt
-                    python3 -m pytest
+
+                    python3 -m venv venv
+
+                    venv/bin/pip install --upgrade pip
+
+                    venv/bin/pip install -r requirements.txt
+
+                    venv/bin/pytest
                 '''
             }
         }
