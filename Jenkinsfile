@@ -31,7 +31,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 sh '''
-                    docker build -t devops-demo: .
+                    docker build -t devops-demo:${BUILD_NUMBER} .
                 '''
             }
         }
