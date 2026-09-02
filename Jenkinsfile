@@ -41,7 +41,7 @@ pipeline {
                 sh '''
                     docker rm -f devops-demo-container || true
 
-                    docker run -d                       --name devops-demo-container                       -p 4000:5000                       devops-demo:
+                    docker run -d  --name devops-demo-container -p 4000:5000 devops-demo:${BUILD_NUMBER}
                 '''
             }
         }
